@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold text-gray-900;
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+p {
+  @apply text-base leading-relaxed;
+}
+
+a {
+  @apply transition-colors;
+}
+
+/* Code blocks */
+pre {
+  @apply overflow-x-auto rounded-lg bg-gray-900 text-gray-100 p-4;
+}
+
+code {
+  @apply font-mono text-sm;
+}
+
+pre code {
+  @apply text-gray-100;
+}
+
+code:not(pre > code) {
+  @apply bg-gray-100 text-red-600 px-2 py-1 rounded;
+}
+
+/* Blockquotes */
+blockquote {
+  @apply border-l-4 border-blue-500 pl-4 py-2 text-gray-600 italic;
+}
+
+/* Tables */
+table {
+  @apply w-full border-collapse border border-gray-300 my-4;
+}
+
+th {
+  @apply bg-gray-100 border border-gray-300 px-4 py-2 text-left font-semibold;
+}
+
+td {
+  @apply border border-gray-300 px-4 py-2;
+}
+
+/* Links */
+a {
+  @apply text-blue-600 hover:text-blue-700 underline;
+}
+
+a:not(.no-underline) {
+  @apply underline;
+}
+
+/* Lists */
+ul, ol {
+  @apply my-4 ml-6;
+}
+
+ul {
+  @apply list-disc;
+}
+
+ol {
+  @apply list-decimal;
+}
+
+li {
+  @apply my-2;
+}
+
+/* Images */
+img {
+  @apply rounded-lg max-w-full h-auto;
+}
+
+/* Focus styles */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-blue-500;
+}
+
+button:focus-visible {
+  @apply outline-2 outline-offset-2 outline-blue-500;
+}
+
+input:focus-visible {
+  @apply outline-2 outline-offset-2 outline-blue-500;
+}
+
+/* Selection */
+::selection {
+  @apply bg-blue-500 text-white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
