@@ -1,0 +1,38 @@
+{
+  "buildCommand": "npm run build",
+  "env": {
+    "NEXT_PUBLIC_SUPABASE_URL": "@supabase_url",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@supabase_anon_key",
+    "SUPABASE_SERVICE_KEY": "@supabase_service_key",
+    "NEXT_PUBLIC_BLOG_URL": "@blog_url",
+    "NEXT_PUBLIC_BLOG_NAME": "@blog_name",
+    "NEXT_PUBLIC_BLOG_DESCRIPTION": "@blog_description"
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=3600, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/posts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=3600, stale-while-revalidate=86400"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/feed",
+      "destination": "/api/rss",
+      "permanent": false
+    }
+  ]
+}
